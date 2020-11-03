@@ -1,0 +1,46 @@
+{
+  "version": "2.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "metabase",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "cpu": "1",
+          "mem": "2",
+          "serviceName": "metabase",
+          "servicePath": "/",
+          "localPath": "./",
+          "uploadType": "package",
+          "containerPort": 3000,
+          "envVariables": {
+            "MB_DB_TYPE": "mysql",
+            "MB_DB_DBNAME": "metabase"
+          },
+          "volumeMounts": {
+            "/metabase-data": "METADATA_CFS"
+          }
+        }
+      }
+    },
+    "requirement": {
+      "addons": [
+        {
+          "type": "CFS",
+          "name": "METADATA_CFS"
+        },
+        {
+          "type": "CynosDB",
+          "name": "Metabase",
+          "envMap": {
+            "IP": "MB_DB_HOST",
+            "PORT": "MB_DB_PORT",
+            "USERNAME": "MB_DB_USER",
+            "PASSWORD": "MB_DB_PASS"
+          }
+        }
+      ]
+    }
+  }
+}
