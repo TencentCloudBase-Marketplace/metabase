@@ -19,7 +19,7 @@
             "MB_DB_DBNAME": "metabase"
           },
           "volumeMounts": {
-            "/metabase-data": "METADATA_CFS"
+            "/metabase-data": "metabase-cfs"
           }
         }
       }
@@ -28,7 +28,7 @@
       "addons": [
         {
           "type": "CFS",
-          "name": "METADATA_CFS"
+          "name": "metabase-cfs"
         },
         {
           "type": "CynosDB",
