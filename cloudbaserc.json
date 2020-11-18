@@ -7,8 +7,8 @@
       "client": {
         "use": "@cloudbase/framework-plugin-container",
         "inputs": {
-          "cpu": "1",
-          "mem": "2",
+          "cpu": 1,
+          "mem": 2,
           "serviceName": "metabase",
           "servicePath": "/",
           "localPath": "./",
@@ -32,7 +32,7 @@
         },
         {
           "type": "CynosDB",
-          "name": "Metabase",
+          "name": "metabase",
           "envMap": {
             "IP": "MB_DB_HOST",
             "PORT": "MB_DB_PORT",
