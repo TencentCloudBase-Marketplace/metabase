@@ -1,4 +1,4 @@
-FROM metabase/metabase:v0.37.0.2
+FROM ccr.ccs.tencentyun.com/tcb_public/metabase_metabase:v0.37.0.2
 
 USER root
 
